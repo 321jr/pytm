@@ -21,9 +21,28 @@ Name|From|To |Data|Protocol|Port
 {dataflows:repeat:|{{item.name}}|{{item.source.name}}|{{item.sink.name}}|{{item.data}}|{{item.protocol}}|{{item.dstPort}}|
 }
 
+## Data Dictionary
+&nbsp;
+
+Name|Description|Classification
+|:----:|:--------:|:----:|
+{data:repeat:|{{item.name}}|{{item.description}}|{{item.classification}}|
+}
+
+&nbsp;
+
+## Data Leaks
+&nbsp;
+
+Name|Source|Destination|Processed By|Classification
+|:----:|:----:|:---:|:----:|:----:|
+{dataleaks:repeat:|{{item.data}}|{{item.src}}|{{item.dst}}|{{item.processedBy}}|{{item.classification.name}}|
+}
+
 &nbsp;
 
 ## Potential Threats
+
 &nbsp;
 &nbsp;
 
