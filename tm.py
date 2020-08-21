@@ -35,6 +35,7 @@ secretDb.isHardened = True
 secretDb.inBoundary = server_db
 secretDb.isSQL = True
 secretDb.inScope = True 
+secretDb.storesPII = True
 secretDb.maxClassification = Classification.TOP_SECRET
 
 my_lambda = Lambda("AWS Lambda")
@@ -44,7 +45,6 @@ my_lambda.inBoundary = vpc
 db_to_secretDb = Dataflow(db, secretDb, "Database verify real user identity")
 db_to_secretDb.protocol = "RDA-TCP"
 db_to_secretDb.dstPort = 40234
-secretDb.storesPII = True
 db_to_secretDb.data = 'Token to verify user identity'
 db_to_secretDb.note = "Verifying that the user is who they say they are."
 db_to_secretDb.maxClassification = Classification.SECRET

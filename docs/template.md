@@ -26,7 +26,7 @@ Name|From|To |Data|Protocol|Port
 
 Name|Description|Classification
 |:----:|:--------:|:----:|
-{data:repeat:|{{item.name}}|{{item.description}}|{{item.classification}}|
+{data:repeat:|{{item.name}}|{{item.description}}|{{item.classification.name}}|
 }
 
 &nbsp;
